@@ -1,0 +1,8 @@
+# -*- mode: ruby -*-
+# vi: set ft=ruby :
+
+create_table "users", id: { type: :bigint, unsigned: true }, charset: "utf8mb4", collation: "utf8mb4_0900_ai_ci", force: :cascade do |t|
+  t.string "name", limit: 30, null: false
+  t.string "email", limit: 562, null: false
+  t.string "password_digest", limit: 30, null: false
+end

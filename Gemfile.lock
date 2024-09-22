@@ -103,6 +103,8 @@ GEM
     diffy (3.4.2)
     drb (2.2.1)
     erubi (1.13.0)
+    factory_bot (6.5.0)
+      activesupport (>= 5.0.0)
     globalid (1.2.1)
       activesupport (>= 6.1)
     i18n (1.14.6)
@@ -335,6 +337,7 @@ DEPENDENCIES
   brakeman
   capybara
   debug
+  factory_bot
   importmap-rails
   jbuilder
   mysql2
