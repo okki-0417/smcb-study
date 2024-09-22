@@ -1,0 +1,22 @@
+services:
+  app:
+    container_name: app
+    build:
+      context: .
+      dockerfile: Dockerfile
+    volumes:
+      - .:/usr/src/app
+    ports:
+      - "3000:3000"
+    depends_on:
+      - db
+
+  db:
+    container_name: db
+    image: mysql/mysql-server
+    volumes:
+      - db_data:/var/lib/mysql
+
+volumes:
+  db_data:
+
