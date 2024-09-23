@@ -1,16 +1,18 @@
 default: &default
   adapter: mysql2
   encoding: utf8
-  database: smcb
   username: root
   password: <%= ENV['MYSQL_ROOT_PASSWORD'] %>
   host: db
 
 development:
   <<: *default
+  database: smcb_development
 
 test:
   <<: *default
+  database: smcb_test
 
 production:
   <<: *default
+  database: smcb_production
