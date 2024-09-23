@@ -3,10 +3,8 @@ default: &default
   encoding: utf8
   database: smcb
   username: root
-  password: <%= ENV['MYSQL_PASSWORD'] %>
-  host: localhost
-  pool: <%= ENV.fetch("RAILS_MAX_THREADS") { 5 } %>
-  timeout: 5000
+  password: <%= ENV['MYSQL_ROOT_PASSWORD'] %>
+  host: db
 
 development:
   <<: *default
