@@ -48,7 +48,8 @@ group :development, :test do
   gem "mysql2"
   gem "ridgepole"
   gem "bcrypt"
-  gem "factory_bot"
+  gem "factory_bot_rails"
+  gem "rails-controller-testing"
 end
 
 group :development do
