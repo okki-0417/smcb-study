@@ -2,6 +2,7 @@
 
 class LoginSessionsController < ApplicationController
   def new
+    @form = LoginForm.new
   end
 
   def create
@@ -11,9 +12,8 @@ class LoginSessionsController < ApplicationController
     user = User.find_by(email: @form.email)
     if user && user.authenticate(@form.password)
       login(user)
-      redirect_to user_path(user.id)
+      redirect_to mypage_path, notice: "ログインしました"
     else
-      flash.now[:danger] = "emailまたはpasswordが正しくありません"
       render :new
     end
   end
@@ -21,7 +21,7 @@ class LoginSessionsController < ApplicationController
   def destroy
     return render :new unless logged_in?
     logout
-    redirect_to root_path
+    redirect_to root_path, notice: "ログアウトしました"
   end
 
   private

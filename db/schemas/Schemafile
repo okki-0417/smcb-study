@@ -1,4 +1,5 @@
 # -*- mode: ruby -*-
 # vi: set ft=ruby :
-
-require "users.schema"
+require 'users.schema'
+require 'actresses.schema'
+require 'diaries.schema'

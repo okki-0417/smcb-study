@@ -9,15 +9,14 @@ RSpec.describe LoginSessionsController, type: :controller do
       subject { post :create, params: {
           login_form: {
             email: user.email,
-            password: "#{user.password}",
-            password_confirmation: "#{user.password_confirmation}"
+            password: "#{user.password}"
           }
         }
       }
       it "正しくログインできること" do
         subject
         expect(controller.logged_in?).to eq(true)
-        expect(response).to redirect_to(user_path(user))
+        expect(response).to redirect_to(mypage_path)
       end
     end
 
@@ -26,8 +25,7 @@ RSpec.describe LoginSessionsController, type: :controller do
         post :create, params: {
           login_form: {
             email: "invalid@invalid.com",
-            passpword: "#{user.password}",
-            password_confirmation: "#{user.password}"
+            passpword: "#{user.password}"
           }
         }
         expect(controller.logged_in?).to eq(false)
@@ -36,8 +34,7 @@ RSpec.describe LoginSessionsController, type: :controller do
         post :create, params: {
           login_form: {
             email: user.email,
-            passpword: "invalid_password",
-            password_confirmation: "invalid_password"
+            passpword: "invalid_password"
           }
         }
         expect(controller.logged_in?).to eq(false)
@@ -52,8 +49,7 @@ RSpec.describe LoginSessionsController, type: :controller do
       post :create, params: {
         login_form: {
           email: user.email,
-          password: "#{user.password}",
-          password_confirmation: "#{user.password_confirmation}"
+          password: "#{user.password}"
         }
       }
       expect(controller.logged_in?).to eq true

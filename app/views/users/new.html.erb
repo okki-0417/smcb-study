@@ -1,0 +1,26 @@
+<% if @user.errors.any? %>
+  <%= @user.errors.each do |error| %>
+    <div>
+      <%= error.full_message %>
+    </div>
+  <% end %>
+<% end %>
+
+<%= form_with model: @user, url: users_path, data: {turbo: false} do |f| %>
+
+  <%= f.label :name, "名前" %>
+  <%= f.text_field :name %>
+
+  <%= f.label :email, "email" %>
+  <%= f.email_field :email %>
+
+  <%= f.label :password, "password" %>
+  <%= f.password_field :password %>
+
+  <%= f.label :password_confirmation, "password_confirmation" %>
+  <%= f.password_field :password_confirmation %>
+
+  <%= f.submit "作成する", disable_with: '作成中...' %>
+<% end %>
+
+<%= link_to "ログインはこちら", new_login_session_path %>

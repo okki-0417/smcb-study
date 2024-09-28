@@ -50,6 +50,7 @@ group :development, :test do
   gem "bcrypt"
   gem "factory_bot_rails"
   gem "rails-controller-testing"
+  gem "sassc-rails"
 end
 
 group :development do

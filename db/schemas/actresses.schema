@@ -1,0 +1,9 @@
+# -*- mode: ruby -*-
+# vi: set ft=ruby :
+create_table "actresses", id: { type: :bigint, unsigned: true }, charset: "utf8mb4", collation: "utf8mb4_0900_ai_ci", force: :cascade do |t|
+  t.string "name", limit: 30, null: false
+  t.datetime "birth_day", limit: 256, null: false
+  t.string "bust_size", limit: 2
+  t.datetime "created_at", precision: nil, null: false
+  t.datetime "updated_at", precision: nil, null: false
+end

@@ -1,5 +1,6 @@
 Rails.application.routes.draw do
-  root "login_sessions#new"
+  root "users#new"
+  resource :mypage, only: [ :show ]
   resources :users
   resource :login_session, only: [ :new, :create, :destroy ]
 end
