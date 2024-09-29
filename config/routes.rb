@@ -3,4 +3,5 @@ Rails.application.routes.draw do
   resource :mypage, only: [ :show ]
   resources :users
   resource :login_session, only: [ :new, :create, :destroy ]
+  resources :diaries
 end

@@ -1,0 +1,11 @@
+# -*- mode: ruby -*-
+# vi: set ft=ruby :
+create_table "diaries", id: { type: :bigint, unsigned: true }, charset: "utf8mb4", collation: "utf8mb4_0900_ai_ci", force: :cascade do |t|
+  t.string "title", limit: 30, null: false
+  t.bigint "creator_user_id", null: false, unsigned: true
+  t.string "okazu_title", limit: 100, null: false
+  t.integer "reputation_points", null: false
+  t.string "content", limit: 3000, null: false
+  t.datetime "created_at", precision: nil, null: false
+  t.datetime "updated_at", precision: nil, null: false
+end

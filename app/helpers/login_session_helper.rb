@@ -17,6 +17,9 @@ module LoginSessionHelper
     @current_user = nil
   end
 
+  def restrict_to_login_user
+    redirect_to new_user_path unless logged_in?
+  end
 
   def logged_in?
     current_user.present?
