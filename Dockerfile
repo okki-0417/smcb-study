@@ -15,4 +15,4 @@ COPY . .
 
 EXPOSE 3000
 
-CMD [ "rails", "db:create", "&&", "rails", "ridgepole:apply", "&&", "rails", "server", "-b", "0.0.0.0" ]
+CMD [ "/bin/bash", "-c", "rails db:create && rails ridgepole:apply && rails server -b 0.0.0.0" ]
