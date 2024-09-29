@@ -13,12 +13,16 @@ services:
         condition: service_healthy
     environment:
       MYSQL_ROOT_PASSWORD: ${MYSQL_ROOT_PASSWORD}
+      DATABASE_HOST: ${DATABASE_HOST}
+    networks:
+      - app-network
 
   db:
     container_name: db
     image: mysql/mysql-server
     volumes:
       - db_data:/var/lib/mysql
+      - ./mysql-init.sql:/docker-entrypoint-initdb.d/init.sql
     ports:
       - "3306:3306"
     environment:
@@ -28,7 +32,11 @@ services:
       interval: 10s
       timeout: 5s
       retries: 5
+    networks:
+      - app-network
 
+networks:
+  app-network:
 volumes:
   db_data:
 
