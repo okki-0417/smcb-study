@@ -50,7 +50,6 @@ group :development, :test do
   gem "bcrypt"
   gem "factory_bot_rails"
   gem "rails-controller-testing"
-  gem "sassc-rails"
 end
 
 group :development do
@@ -63,3 +62,5 @@ group :test do
   gem "capybara"
   gem "selenium-webdriver"
 end
+
+gem "tailwindcss-rails", "~> 3.0"
